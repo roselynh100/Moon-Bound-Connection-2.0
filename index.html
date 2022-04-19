@@ -8,7 +8,19 @@
     <style>
       body {
         font-family: sans-serif;
-        background-color: linear-gradient(#5D5861, #1E040A);
+      }
+
+      body:before {
+        content:"";
+        position:fixed;
+        left:0;
+        top:0;
+        right:0;
+        bottom:0;
+        z-index:-1; 
+        background: #3A323A;
+        background: linear-gradient(#3A323A 25%, #1A171A 60%);
+        /* background: linear-gradient(#5D5861, #1E040A); */
       }
     </style>
     <title>Moon-Bound Connection 2.0</title>
