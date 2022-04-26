@@ -2,7 +2,8 @@
 
     <div class="sidebar">
         <h3 v-for="page in pages" class="pages">
-            {{page}}
+            <i :class="'fa-xl fa-solid fa-fw ' + page.icon"></i>
+            {{page.name}}
         </h3>
         <hr size="0.5" color="#363636">
         <p v-for="playlist in playlists" class="playlistItems">
@@ -17,11 +18,11 @@
 import {ref} from "vue"
 
 let pages = [
-    "Home",
-    "Search",
-    "Your Library",
-    "Create Playlist",
-    "Liked Songs"
+    {name: "Home", icon: "fa-house"},
+    {name: "Search", icon: "fa-magnifying-glass"},
+    {name: "Your Library", icon: "fa-lines-leaning"},
+    {name: "Create Playlist", icon: "fa-square-plus"},
+    {name: "Liked Songs", icon: "fa-heart"}
 ]
 
 let playlists = ref([
@@ -58,8 +59,11 @@ let playlists = ref([
 }
 
 .pages {
-    margin-left: 75px;
     cursor: default;
+}
+
+.pages i {
+    margin-right: 15px;
 }
 
 .playlistItems a {
